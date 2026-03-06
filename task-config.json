@@ -1,0 +1,58 @@
+{
+  "tasks": {
+    "daily-cleanup": {
+      "schedule": "0 3 * * *",
+      "window": "24h",
+      "retry": {
+        "maxAttempts": 3,
+        "delayMinutes": 30
+      },
+      "compensation": {
+        "enabled": true,
+        "maxHoursOverdue": 24
+      }
+    },
+    "daily-summary": {
+      "schedule": "0 23 * * *",
+      "window": "2h",
+      "enabled": true,
+      "delivery": "main-session",
+      "waitUserConfirm": true,
+      "timeout": "2h",
+      "retry": {
+        "maxAttempts": 1,
+        "delayMinutes": 0
+      },
+      "compensation": {
+        "enabled": true,
+        "maxHoursOverdue": 12
+      }
+    }
+  },
+  "healthCheck": {
+    "enabled": true,
+    "interval": "6h",
+    "tokenBudget": 100
+  },
+  "startup": {
+    "checkMissedTasks": true,
+    "autoCompensate": true
+  },
+  "logging": {
+    "path": "/root/.openclaw/workspace/memory/task-logs.json",
+    "maxEntries": 100,
+    "rotate": "weekly"
+  },
+  "memory": {
+    "autoSummarize": false,
+    "dailySummary": true,
+    "summaryTime": "23:00",
+    "waitTimeout": "2h"
+  },
+  "todos": {
+    "enabled": true,
+    "storage": "memory/todos.json",
+    "cleanupDays": 30,
+    "reminderStrategy": "user-defined"
+  }
+}

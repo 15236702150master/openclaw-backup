@@ -1,0 +1,24 @@
+{
+  "cleanup": {
+    "tempFileMaxAge": "1d",
+    "logFileMaxAge": "30d",
+    "archiveMaxAge": "90d",
+    "maxWorkspaceSize": "500MB",
+    "maxTempSize": "200MB"
+  },
+  "memory": {
+    "summarizeInterval": "7d",
+    "maxMemorySize": "200KB",
+    "autoSummarize": true
+  },
+  "token": {
+    "maxContextFiles": 10,
+    "excludePatterns": ["*.tmp", "*.cache", "*.log", "*.snapshot"],
+    "priorityFiles": ["MEMORY.md", "SOUL.md", "USER.md", "AGENTS.md"]
+  },
+  "schedule": {
+    "quickCleanup": "daily 03:00",
+    "deepCleanup": "weekly Sunday 02:00",
+    "healthCheck": "every 30m"
+  }
+}

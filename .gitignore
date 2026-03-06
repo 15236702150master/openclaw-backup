@@ -1,0 +1,35 @@
+# 敏感信息
+.env
+*.env
+.env.*
+openclaw.json.bak
+.github-credentials.sh
+
+# 临时文件
+*.tmp
+*.log
+*.pyc
+__pycache__/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 节点模块
+node_modules/
+
+# 备份和缓存
+backups/
+cache/
+*.cache
+
+# 日志
+memory/cleanup.log
+memory/task-logs.json
+memory/daily-summaries.json
+
+# 临时会话
+sessions/*.json
+.github-credentials.sh
+*.env
+TOKEN_*
