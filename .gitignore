@@ -1,35 +1,34 @@
 # 敏感信息
-.env
-*.env
-.env.*
-openclaw.json.bak
+credentials/
 .github-credentials.sh
+API-KEYS.md
+openclaw.json.bak
+openclaw.json.bak.*
+openclaw.json.backup*
+
+# 子模块目录（有自己的 git 仓库）
+workspace/
+workspace_*/
+agents/*/workspace/
+
+# 大型目录
+extensions/*/node_modules/
+extensions/node_modules/
+agents/*/workspace/node_modules/
+*/node_modules/
+
+# 缓存和日志
+logs/
+sessions/
+delivery-queue/
+devices/
+browser/snapshots/
+media/cache/
+browser/user-data/
+
+# 备份文件
+*.tar.gz
 
 # 临时文件
 *.tmp
 *.log
-*.pyc
-__pycache__/
-
-# 系统文件
-.DS_Store
-Thumbs.db
-
-# 节点模块
-node_modules/
-
-# 备份和缓存
-backups/
-cache/
-*.cache
-
-# 日志
-memory/cleanup.log
-memory/task-logs.json
-memory/daily-summaries.json
-
-# 临时会话
-sessions/*.json
-.github-credentials.sh
-*.env
-TOKEN_*

@@ -1,0 +1,10 @@
+{
+  "id": "todo-reminder-every-minute",
+  "name": "待办提醒（每分钟）",
+  "schedule": "* * * * *",
+  "command": "python3 /root/.openclaw/workspace/scripts/send-reminder.py",
+  "sessionTarget": "isolated",
+  "deliver": true,
+  "enabled": true,
+  "description": "每分钟检查待办并发送提醒"
+}

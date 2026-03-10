@@ -1,0 +1,22 @@
+[
+  {
+    "id": "todo-check",
+    "name": "待办检查",
+    "schedule": "0 * * * *",
+    "command": "python3 /root/.openclaw/workspace/scripts/check-reminders.py",
+    "sessionTarget": "isolated",
+    "deliver": true,
+    "enabled": true,
+    "description": "每小时检查一次待办提醒"
+  },
+  {
+    "id": "daily-summary",
+    "name": "每日摘要",
+    "schedule": "0 23 * * *",
+    "command": "python3 /root/.openclaw/workspace/scripts/daily-summary-ai.py",
+    "sessionTarget": "isolated",
+    "deliver": true,
+    "enabled": true,
+    "description": "每天晚上 23:00 生成每日对话摘要"
+  }
+]

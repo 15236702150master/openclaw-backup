@@ -16,7 +16,7 @@
       "schedule": "0 23 * * *",
       "window": "2h",
       "enabled": true,
-      "delivery": "main-session",
+      "delivery": "boss-session",
       "waitUserConfirm": true,
       "timeout": "2h",
       "retry": {

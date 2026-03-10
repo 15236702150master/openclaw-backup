@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "c34f441b-d9e1-48fd-86a2-3d8281cb218c",
+      "name": "测试提醒 - 烧热水",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772631025514,
+      "updatedAtMs": 1772631152002,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-04T13:32:25.459Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "💧 提醒：烧热水时间到了！"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk"
+      },
+      "state": {
+        "lastRunAtMs": 1772631145463,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 6539,
+        "lastError": "No delivery target resolved for channel \"dingtalk\". Set delivery.to.",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "af92ffb6-4b9a-4268-897a-258a53d81090",
+      "name": "测试提醒功能-吴震宇-20260304",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772631148506,
+      "updatedAtMs": 1772631276084,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-04T13:34:28.452Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "⏰ 测试提醒功能"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk"
+      },
+      "state": {
+        "lastRunAtMs": 1772631268456,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 7628,
+        "lastError": "No delivery target resolved for channel \"dingtalk\". Set delivery.to.",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "da26d1cf-7121-490d-aa89-5252d93e3ab9",
+      "name": "测试提醒 2",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772641166330,
+      "updatedAtMs": 1772641231399,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-04T16:20:26.265Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "💧 测试提醒：烧热水！"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk"
+      },
+      "state": {
+        "lastRunAtMs": 1772641226269,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 5130,
+        "lastError": "No delivery target resolved for channel \"dingtalk\". Set delivery.to.",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "d8793832-944b-4462-a9f0-839bcb2e219f",
+      "name": "测试提醒 3",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772641283291,
+      "updatedAtMs": 1772641349765,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-04T16:22:23.237Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "💧 测试提醒 3"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "dingtalk:group:cidLVGAn3OiNoE0RfQCA5GE4g=="
+      },
+      "state": {
+        "lastRunAtMs": 1772641343280,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 6485,
+        "lastError": "cron announce delivery failed",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "c6335802-4865-4340-aa06-0020b214749b",
+      "name": "测试提醒 4",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772641364809,
+      "updatedAtMs": 1772641430378,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-04T16:23:44.762Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "💧 测试提醒 4"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "group:cidLVGAn3OiNoE0RfQCA5GE4g=="
+      },
+      "state": {
+        "lastRunAtMs": 1772641424768,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 5610,
+        "lastError": "cron announce delivery failed",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "195fc15d-f5bd-4b3a-b60e-c1a3f62022e0",
+      "name": "测试提醒 5",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772641444930,
+      "updatedAtMs": 1772641510730,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-04T16:25:04.876Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "💧 测试提醒 5（自动路由）"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk"
+      },
+      "state": {
+        "lastRunAtMs": 1772641504880,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 5850,
+        "lastError": "No delivery target resolved for channel \"dingtalk\". Set delivery.to.",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    }
+  ]
+}

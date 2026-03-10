@@ -1,0 +1,17 @@
+import { emptyPluginConfigSchema } from "openclaw/plugin-sdk";
+
+import { wecomPlugin } from "./src/channel.js";
+import { setWeComRuntime } from "./src/runtime.js";
+
+const plugin = {
+  id: "wecom",
+  name: "企业微信",
+  description: "企业微信 OpenClaw 插件",
+  configSchema: emptyPluginConfigSchema(),
+  register(api) {
+    setWeComRuntime(api.runtime);
+    api.registerChannel({ plugin: wecomPlugin });
+  },
+};
+
+export default plugin;
