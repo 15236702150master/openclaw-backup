@@ -1,0 +1,113 @@
+{
+  "providers": {
+    "bailian": {
+      "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+      "apiKey": "sk-sp-fb44441446d9445799ce6370cd17de36",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "qwen3-max-2026-01-23",
+          "name": "qwen3-max-2026-01-23",
+          "reasoning": false,
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-completions"
+        },
+        {
+          "id": "qwen3.5-plus",
+          "name": "qwen3.5-plus",
+          "reasoning": false,
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-completions"
+        },
+        {
+          "id": "qwen3-coder-next",
+          "name": "qwen3-coder-next",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-completions"
+        },
+        {
+          "id": "qwen3-coder-plus",
+          "name": "qwen3-coder-plus",
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-completions"
+        },
+        {
+          "id": "glm-4.7",
+          "name": "glm-4.7",
+          "reasoning": false,
+          "contextWindow": 202752,
+          "maxTokens": 16384,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-completions"
+        },
+        {
+          "id": "kimi-k2.5",
+          "name": "kimi-k2.5",
+          "reasoning": false,
+          "contextWindow": 262144,
+          "maxTokens": 32768,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-completions"
+        }
+      ]
+    }
+  }
+}

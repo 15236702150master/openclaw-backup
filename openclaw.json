@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.1",
+    "lastTouchedAt": "2026-03-09T15:10:11.305Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-08T14:24:51.431Z",
+    "lastRunVersion": "2026.3.1",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "bailian": {
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "apiKey": "sk-sp-fb44441446d9445799ce6370cd17de36",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3-max-2026-01-23",
+            "name": "qwen3-max-2026-01-23",
+            "reasoning": false,
+            "contextWindow": 262144,
+            "maxTokens": 65536
+          },
+          {
+            "id": "qwen3.5-plus",
+            "name": "qwen3.5-plus",
+            "reasoning": false,
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          },
+          {
+            "id": "qwen3-coder-next",
+            "name": "qwen3-coder-next",
+            "contextWindow": 262144,
+            "maxTokens": 65536
+          },
+          {
+            "id": "qwen3-coder-plus",
+            "name": "qwen3-coder-plus",
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          },
+          {
+            "id": "glm-4.7",
+            "name": "glm-4.7",
+            "reasoning": false,
+            "contextWindow": 202752,
+            "maxTokens": 16384
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "kimi-k2.5",
+            "reasoning": false,
+            "contextWindow": 262144,
+            "maxTokens": 32768
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "bailian/qwen3.5-plus"
+      },
+      "models": {
+        "bailian/qwen3-max-2026-01-23": {},
+        "bailian/qwen3.5-plus": {},
+        "bailian/qwen3-coder-next": {},
+        "bailian/qwen3-coder-plus": {},
+        "bailian/glm-4.7": {},
+        "bailian/kimi-k2.5": {}
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "heartbeat": {
+        "every": "3h",
+        "target": "last"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "collector",
+        "name": "信息收集",
+        "workspace": "/root/.openclaw/workspace_collector",
+        "agentDir": "/root/.openclaw/agents/collector/agent",
+        "model": "bailian/qwen3.5-plus",
+        "skills": []
+      },
+      {
+        "id": "executor",
+        "name": "执行处理",
+        "workspace": "/root/.openclaw/workspace_executor",
+        "agentDir": "/root/.openclaw/agents/executor/agent",
+        "model": "bailian/qwen3.5-plus",
+        "skills": []
+      },
+      {
+        "id": "optimizer",
+        "name": "输出优化",
+        "workspace": "/root/.openclaw/workspace_optimizer",
+        "agentDir": "/root/.openclaw/agents/optimizer/agent",
+        "model": "bailian/qwen3.5-plus",
+        "skills": []
+      },
+      {
+        "id": "boss",
+        "name": "Boss",
+        "workspace": "/root/.openclaw/workspace_boss",
+        "agentDir": "/root/.openclaw/agents/boss/agent",
+        "model": "bailian/qwen3.5-plus"
+      },
+      {
+        "id": "executor2",
+        "name": "执行处理2",
+        "workspace": "/root/.openclaw/workspace_executor2",
+        "agentDir": "/root/.openclaw/agents/executor2/agent",
+        "model": "bailian/qwen3.5-plus",
+        "skills": []
+      },
+      {
+        "id": "wecom",
+        "name": "企业微信",
+        "workspace": "/root/.openclaw/workspace",
+        "model": "bailian/qwen3.5-plus",
+        "skills": []
+      }
+    ]
+  },
+  "tools": {
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "boss",
+        "collector",
+        "executor",
+        "executor2",
+        "optimizer"
+      ]
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "collector",
+      "match": {
+        "channel": "feishu",
+        "accountId": "collector"
+      }
+    },
+    {
+      "agentId": "executor",
+      "match": {
+        "channel": "feishu",
+        "accountId": "executor"
+      }
+    },
+    {
+      "agentId": "executor2",
+      "match": {
+        "channel": "feishu",
+        "accountId": "executor2"
+      }
+    },
+    {
+      "agentId": "optimizer",
+      "match": {
+        "channel": "feishu",
+        "accountId": "optimizer"
+      }
+    },
+    {
+      "agentId": "boss",
+      "match": {
+        "channel": "feishu",
+        "accountId": "boss"
+      }
+    }
+  ],
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "cron": {
+    "enabled": true,
+    "maxConcurrentRuns": 2,
+    "sessionRetention": "24h",
+    "runLog": {
+      "maxBytes": "2mb",
+      "keepLines": 2000
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8518976800:AAEsqcqer9JGqAL2APgrNFx8aTgrGwi8zPk",
+      "groupPolicy": "open",
+      "streaming": "off",
+      "proxy": "http://172.17.48.1:7897"
+    },
+    "dingtalk": {
+      "webhookPath": "/dingtalk",
+      "agentId": "wecom",
+      "clientId": "dingn5d1drcpgkkacelq",
+      "clientSecret": "ybFDUl6V1rELaYosmOUbS2nEUU1gYt_DLEC9HwfioeXhSU1FpGmv3gA8g7ZQo607",
+      "corpId": "ding492b702f4f56ecc24ac5d6980864d335",
+      "robotCode": "dingn5d1drcpgkkacelq",
+      "enabled": true,
+      "dmPolicy": "open",
+      "groupPolicy": "open",
+      "messageType": "markdown",
+      "debug": false,
+      "allowFrom": [
+        "*"
+      ]
+    },
+    "feishu": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "groupPolicy": "open",
+      "accounts": {
+        "collector": {
+          "appId": "cli_a9272c2e71389bce",
+          "appSecret": "v6prug6L3KzSFgLhIipn82EqsABbcrAw"
+        },
+        "executor": {
+          "appId": "cli_a9272763cdf8dbd2",
+          "appSecret": "MWDZR4CkwXnZVGr33ohHkSnRkFyO3rKc"
+        },
+        "executor2": {
+          "appId": "cli_a927101820f8dbde",
+          "appSecret": "rUVFHpyf0pyy59p8Q3SNJenjGOi8sFHt"
+        },
+        "optimizer": {
+          "appId": "cli_a927205810f89bca",
+          "appSecret": "abIbeRRXW5IPf2bVnVr0PVFkIqF3rTPe"
+        },
+        "boss": {
+          "appId": "cli_a926feb4b9789bd2",
+          "appSecret": "c6QZg6uksFqeVCtDSinNacY1XyrlNoZp"
+        }
+      }
+    },
+    "wecom": {
+      "enabled": true,
+      "botId": "aib-gMP042upw8CNjyo_qtuxg-gro2OvHr-",
+      "secret": "kUcEoxvQ8M3VkpU6awPTgj0xSvIXaI0f3yljrt5ImKS",
+      "allowFrom": [],
+      "dmPolicy": "pairing",
+      "agentId": "wecom"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://124.161.135.99:18789"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "c95a91fa0137c71918642a02bc6857c8e68db3c3680c5cfc"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "plugins": {
+    "allow": [
+      "dingtalk",
+      "feishu",
+      "telegram",
+      "wecom"
+    ],
+    "entries": {
+      "dingtalk": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      },
+      "telegram": {
+        "enabled": true
+      },
+      "wecom": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "dingtalk": {
+        "source": "npm",
+        "spec": "@soimy/dingtalk",
+        "installPath": "/root/.openclaw/extensions/dingtalk",
+        "version": "3.2.0",
+        "resolvedName": "@soimy/dingtalk",
+        "resolvedVersion": "3.2.0",
+        "resolvedSpec": "@soimy/dingtalk@3.2.0",
+        "installedAt": "2026-03-06T17:20:00.000Z"
+      },
+      "feishu": {
+        "source": "npm",
+        "spec": "@larksuiteoapi/feishu-openclaw-plugin",
+        "installPath": "/root/.openclaw/extensions/feishu-openclaw-plugin",
+        "version": "2026.3.8-beta.0",
+        "resolvedName": "@larksuiteoapi/feishu-openclaw-plugin",
+        "resolvedVersion": "2026.3.8-beta.0",
+        "resolvedSpec": "@larksuiteoapi/feishu-openclaw-plugin@2026.3.8-beta.0",
+        "integrity": "sha512-WkSBH2X7PF6/Goi8ZegWc51tLlUNTw0tXJIwDvRKX7uHctAZY89B8RmlgkJo10O0uxzI1pfNr9UCgLpPtffzpw==",
+        "shasum": "b8ab18872b61312f6cf9e8293c58cd47d82591f9",
+        "resolvedAt": "2026-03-08T02:56:00.000Z",
+        "installedAt": "2026-03-08T02:56:00.000Z"
+      },
+      "wecom": {
+        "source": "npm",
+        "spec": "@wecom/wecom-openclaw-plugin",
+        "installPath": "/root/.openclaw/extensions/wecom-openclaw-plugin",
+        "version": "1.0.4",
+        "resolvedName": "@wecom/wecom-openclaw-plugin",
+        "resolvedVersion": "1.0.4",
+        "resolvedSpec": "@wecom/wecom-openclaw-plugin@1.0.4",
+        "installedAt": "2026-03-09T22:15:00.000Z"
+      }
+    }
+  }
+}

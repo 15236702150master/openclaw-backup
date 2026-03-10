@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "filesystem-mcp": {
+      "version": "1.0.0",
+      "installedAt": 1772534726133
+    },
+    "nano-pdf": {
+      "version": "1.0.0",
+      "installedAt": 1772535264023
+    },
+    "find": {
+      "version": "1.0.0",
+      "installedAt": 1772541292587
+    },
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1772547600701
+    },
+    "ddg-web-search": {
+      "version": "1.0.0",
+      "installedAt": 1772598569360
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1772684892452
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1772684897197
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1772684902064
+    },
+    "memory-setup": {
+      "version": "1.0.0",
+      "installedAt": 1772684915657
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1772684917815
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1772684920364
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1772684922493
+    },
+    "markdown-to-word-skill": {
+      "version": "1.0.0",
+      "installedAt": 1772692507402
+    },
+    "docx-formatter": {
+      "version": "1.0.1",
+      "installedAt": 1772692510918
+    },
+    "office-document-specialist-suite": {
+      "version": "1.0.2",
+      "installedAt": 1772692517388
+    }
+  }
+}

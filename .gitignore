@@ -1,0 +1,34 @@
+# 敏感信息
+credentials/
+.github-credentials.sh
+API-KEYS.md
+openclaw.json.bak
+openclaw.json.bak.*
+openclaw.json.backup*
+
+# 子模块目录（有自己的 git 仓库）
+workspace/
+workspace_*/
+agents/*/workspace/
+
+# 大型目录
+extensions/*/node_modules/
+extensions/node_modules/
+agents/*/workspace/node_modules/
+*/node_modules/
+
+# 缓存和日志
+logs/
+sessions/
+delivery-queue/
+devices/
+browser/snapshots/
+media/cache/
+browser/user-data/
+
+# 备份文件
+*.tar.gz
+
+# 临时文件
+*.tmp
+*.log
